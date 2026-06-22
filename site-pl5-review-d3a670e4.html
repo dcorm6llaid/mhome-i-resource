@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>识别排列五 · 专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f7fa;
+            color: #1f2b3a;
+            line-height: 1.6;
+        }
+
+        /* 蓝绿色点缀主题 */
+        :root {
+            --teal-dark: #0a7e7c;
+            --teal-mid: #2bc0ba;
+            --teal-light: #c3eceb;
+            --teal-soft: #e2f3f2;
+            --slate: #3a4b5e;
+            --card-bg: #ffffff;
+            --shadow: 0 8px 20px rgba(0, 40, 40, 0.08);
+            --radius: 20px;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---- HERO 横幅 ---- */
+        .hero {
+            background: linear-gradient(145deg, #f0faf9 0%, #d9efee 100%);
+            padding: 60px 24px 50px;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 4px 12px rgba(10, 126, 124, 0.06);
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #124a48;
+            margin-bottom: 12px;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #2b5e5b;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(2px);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            border: 1px solid rgba(43, 192, 186, 0.3);
+        }
+
+        /* ---- 网格卡片区 ---- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: 600px) {
+            .cards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-top: 4px solid var(--teal-mid);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(10, 126, 124, 0.10);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            color: #124a48;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card h3 i {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: var(--teal-light);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-style: normal;
+            color: #0a7e7c;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #2f4052;
+        }
+
+        .card .highlight {
+            display: inline-block;
+            background: var(--teal-soft);
+            padding: 2px 12px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #0a5e5c;
+            margin-top: 8px;
+        }
+
+        /* ---- 简介段落 (自然叙述) ---- */
+        .intro-section {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro-section h2 {
+            font-size: 1.6rem;
+            font-weight: 480;
+            color: #124a48;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--teal-mid);
+            padding-left: 18px;
+        }
+
+        .intro-section p {
+            margin-bottom: 18px;
+            font-size: 1rem;
+            color: #2c3e4e;
+        }
+
+        .intro-section .sentence-link {
+            background: var(--teal-soft);
+            padding: 14px 20px;
+            border-radius: 16px;
+            border-left: 4px solid var(--teal-dark);
+            margin: 24px 0 6px;
+            font-size: 1.02rem;
+        }
+
+        .sentence-link a {
+            color: #0a7e7c;
+            font-weight: 550;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(10, 126, 124, 0.25);
+            transition: border-color 0.2s;
+        }
+
+        .sentence-link a:hover {
+            border-bottom-color: #0a7e7c;
+        }
+
+        /* ---- FAQ 摘要 ---- */
+        .faq-mini {
+            background: #eef7f6;
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 40px;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.25rem;
+            font-weight: 480;
+            color: #124a48;
+            margin-bottom: 14px;
+        }
+
+        .faq-item {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(10, 126, 124, 0.12);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item .q {
+            font-weight: 540;
+            color: #1f4e4c;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .faq-item .a {
+            color: #3a5b5a;
+            font-size: 0.94rem;
+        }
+
+        /* ---- 页尾 ---- */
+        .page-footer {
+            text-align: center;
+            padding: 32px 20px 40px;
+            border-top: 1px solid rgba(10, 126, 124, 0.15);
+            color: #3f6260;
+            font-size: 0.9rem;
+        }
+
+        .page-footer a {
+            color: #0a7e7c;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .page-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 移动端微调 */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .sub {
+                font-size: 0.95rem;
+                padding: 6px 18px;
+            }
+
+            .card {
+                padding: 22px 18px;
+            }
+
+            .intro-section {
+                padding: 24px 18px;
+            }
+
+            .faq-mini {
+                padding: 20px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO 横幅 -->
+    <header class="hero">
+        <h1>排列五 · 从识别开始</h1>
+        <div class="sub">一组数字，多种视角</div>
+    </header>
+
+    <div class="container">
+
+        <!-- 网格卡片：帮助用户快速理解用途 -->
+        <div class="cards-grid">
+            <div class="card">
+                <h3><i>1</i> 快速定位</h3>
+                <p>看到「排列五」时，第一反应是明确它属于哪一类数字玩法。页面围绕识别与分类，帮你节省摸索时间。</p>
+                <span class="highlight">用途清晰</span>
+            </div>
+            <div class="card">
+                <h3><i>2</i> 结构简述</h3>
+                <p>数字组合以五位为基础，规则简明。了解基础结构后，就能判断是否匹配自己的需求或兴趣。</p>
+                <span class="highlight">规则直观</span>
+            </div>
+            <div class="card">
+                <h3><i>3</i> 场景适配</h3>
+                <p>无论你是初次接触，还是想回顾基本概念，这里提供的信息都保持克制与真实，不夸大也不模糊。</p>
+                <span class="highlight">真实可读</span>
+            </div>
+            <div class="card">
+                <h3><i>4</i> 延续探索</h3>
+                <p>当你准备好深入时，可以通过下方链接直接浏览网站，查看更多关于排列五的完整内容与动态。</p>
+                <span class="highlight">自然过渡</span>
+            </div>
+        </div>
+
+        <!-- 三段自然介绍 (杂志风格) -->
+        <div class="intro-section">
+            <h2>如何理解这个网站</h2>
+            <p>当你打开一个不熟悉的站点，最先想知道的无非是：它提供什么？对我有没有用？<strong>而这里所做的，正是帮助你快速判断</strong>——围绕排列五这个关键词，页面把核心特征拆解成可浏览的片段，没有多余的干扰。</p>
+
+            <p>很多人第一次接触时，容易在术语或复杂说明中绕路。所以这次介绍尝试用更平实的语言，把规则、结构、适用场景放在一起：你不需要提前了解任何背景，只需顺着叙述读下去，就能建立基本认识。</p>
+
+            <div class="sentence-link">
+                如果你希望直接浏览完整信息，可以前往 <a href="https://site-pl5.com">排列五</a> 页面，那里有更详尽的说明与最新动态。
+            </div>
+
+            <p style="margin-top: 22px;">另外，这个页面也尝试提供一种「冷静的入口」——不夸大、不诱导，只把事实排列清楚。当你觉得某一部分恰好是你想了解的，再进一步也不迟。</p>
+        </div>
+
+        <!-- FAQ 摘要 (蓝绿风格) -->
+        <div class="faq-mini">
+            <h3>常见疑问摘要</h3>
+            <div class="faq-item">
+                <span class="q">排列五的规则复杂吗？</span>
+                <span class="a">基础规则比较直接：五位数字组合，每位从0到9中选择。没有额外的附加条件，适合快速上手。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">这个网站适合什么人看？</span>
+                <span class="a">适合任何想了解排列五基本面貌的人，无论是新手还是想回顾基础的用户，都能从中找到有用的信息。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">信息更新是否及时？</span>
+                <span class="a">网站会保持内容与当前规则同步，你可以随时通过上方链接确认最新版本。</span>
+            </div>
+        </div>
+
+        <!-- 页尾提示 -->
+        <footer class="page-footer">
+            <p>专题介绍 · 基于真实信息整理</p>
+            <p style="margin-top: 6px;">更多内容请参考 <a href="https://site-pl5.com">排列五</a> —— 页面设计与叙述均保持克制与清晰。</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

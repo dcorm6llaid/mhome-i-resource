@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排列五 · 资料索引与知识库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            color: #1e2a3a;
+            line-height: 1.65;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .page-wrapper {
+            max-width: 760px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            padding: 2.8rem 2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        @media (min-width: 640px) {
+            .page-wrapper {
+                padding: 3.6rem 3.2rem;
+            }
+        }
+
+        /* 标题层级 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 540;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+            color: #0b1a2f;
+            line-height: 1.25;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #546e7a;
+            margin-bottom: 2.8rem;
+            border-bottom: 1px solid #eef2f6;
+            padding-bottom: 1.4rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 540;
+            margin: 2.2rem 0 0.75rem 0;
+            color: #1e2a3a;
+            border-left: 4px solid #d0dae6;
+            padding-left: 0.75rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 0.98rem;
+            color: #2a3b4c;
+        }
+
+        a {
+            color: #1f4e8a;
+            text-decoration: none;
+            border-bottom: 1px solid #ced8e4;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #1f4e8a;
+            color: #0f3560;
+        }
+
+        /* 卡片区（目录感） */
+        .index-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin: 2rem 0 1.2rem;
+        }
+
+        .index-item {
+            background: #f5f8fc;
+            border-radius: 16px;
+            padding: 0.9rem 1.2rem;
+            border-left: 3px solid #b8c9dd;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .index-tag {
+            background: #dce4ef;
+            color: #1f3b5c;
+            font-size: 0.72rem;
+            font-weight: 500;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+
+        .index-item strong {
+            font-weight: 540;
+            margin-right: 0.2rem;
+        }
+
+        /* 提示 / 说明 区块 */
+        .info-callout {
+            background: #f0f4fa;
+            border-radius: 18px;
+            padding: 1.4rem 1.6rem;
+            margin: 2rem 0 1.5rem;
+            border: 1px solid #e4ebf3;
+        }
+
+        .info-callout p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-preview {
+            margin: 2.2rem 0 0.8rem;
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .faq-preview .faq-q {
+            background: #ffffff;
+            border: 1px solid #e6edf5;
+            border-radius: 14px;
+            padding: 0.8rem 1.2rem;
+            font-size: 0.92rem;
+            color: #1e2a3a;
+        }
+
+        .faq-q span:first-child {
+            font-weight: 510;
+            color: #1f4e6a;
+            margin-right: 0.4rem;
+        }
+
+        .related-links {
+            list-style: none;
+            margin-top: 1.4rem;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.6rem;
+        }
+
+        .related-links li {
+            font-size: 0.92rem;
+        }
+
+        .divider-light {
+            margin: 2.2rem 0 0.8rem;
+            height: 1px;
+            background: #eef2f6;
+        }
+
+        .footer-note {
+            font-size: 0.78rem;
+            color: #78909c;
+            margin-top: 2.6rem;
+            text-align: left;
+            border-top: 1px solid #eef2f6;
+            padding-top: 1.6rem;
+            letter-spacing: 0.01em;
+        }
+
+        .inline-code {
+            background: #edf2f9;
+            border-radius: 6px;
+            padding: 0.1rem 0.4rem;
+            font-family: "SF Mono", "Cascadia Code", monospace;
+            font-size: 0.9em;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 480px) {
+            .page-wrapper {
+                padding: 1.8rem 1.2rem;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .info-callout {
+                padding: 1rem 1.2rem;
+            }
+            .index-item {
+                padding: 0.7rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <h1>排列五 · 资料索引</h1>
+    <div class="subhead">基于公开数据与知识整理的说明页 · 信息组织方向</div>
+
+    <!-- 用一句话自然嵌入链接 -->
+    <p>本页围绕 <a href="https://zhcw-pl5.com">排列五</a> 这一主题，汇集结构化的资料索引、相关说明与常见概念，方便快速定位关键信息。以下内容均整理自可公开查阅的资源，旨在提供一份简洁的条目式参考。</p>
+
+    <!-- 目录感卡片区 -->
+    <h2>📋 信息分类索引</h2>
+    <div class="index-grid">
+        <div class="index-item">
+            <span class="index-tag">基础</span>
+            <strong>玩法结构</strong>  —  五位数直选，每位 0–9，单注 2 元，设 1 个奖级。
+        </div>
+        <div class="index-item">
+            <span class="index-tag">规则</span>
+            <strong>开奖与兑奖</strong>  —  每日开奖一次，开奖号码按顺序排列，全部命中即中奖。
+        </div>
+        <div class="index-item">
+            <span class="index-tag">数据</span>
+            <strong>历史号源</strong>  —  可查阅历次开奖号码及和值、跨度等常用统计特征。
+        </div>
+        <div class="index-item">
+            <span class="index-tag">参考</span>
+            <strong>术语说明</strong>  —  和值、奇偶比、大小比、重号、邻号等基础分析维度。
+        </div>
+    </div>
+
+    <!-- 说明区 -->
+    <h2>📌 说明</h2>
+    <div class="info-callout">
+        <p>本索引页仅用于资料整理与信息导航，不提供任何选号建议、预测或承诺。所有内容均源自公开渠道，<a href="https://zhcw-pl5.com">排列五</a> 的相关规则以官方最新公告为准。</p>
+        <p>如需查询实时开奖结果、历史走势或详细玩法文档，建议直接访问对应信息源，并注意核对数据版本与时效。</p>
+    </div>
+
+    <!-- 提示区 -->
+    <h2>⚡ 使用提示</h2>
+    <p>• 索引条目中的「基础」「规则」「数据」「参考」为常见分类，可按需跳转阅读。</p>
+    <p>• 若需要调取更完整的统计表格或图表，推荐使用支持数据筛选的工具或网站，并结合自身分析框架进行判断。</p>
+    <p>• 信息整理过程中，建议对照原始规则原文，避免二手转述产生的歧义。</p>
+
+    <!-- FAQ 摘要区（简洁条目） -->
+    <h2>❓ 常见疑问摘要</h2>
+    <div class="faq-preview">
+        <div class="faq-q"><span>Q：</span> 排列五的中奖概率是多少？<br><span style="font-weight:400; color:#3a5a78;">A：</span> 直选五位数，每位从 0–9 中选择，总组合数为 10⁵ = 100,000 注，单注中奖概率为 1/100,000。</div>
+        <div class="faq-q"><span>Q：</span> 开奖号码顺序是否重要？<br><span style="font-weight:400; color:#3a5a78;">A：</span> 非常重要，直选投注必须按位全部命中，顺序不可颠倒。</div>
+        <div class="faq-q"><span>Q：</span> 历史数据在哪可以系统查阅？<br><span style="font-weight:400; color:#3a5a78;">A：</span> 多数彩票资讯平台提供历史开奖归档，具体以官方渠道或授权数据源为准。</div>
+    </div>
+
+    <!-- 相关信息区 -->
+    <h2>🔗 相关信息</h2>
+    <ul class="related-links">
+        <li>· 五位数直选组合计数</li>
+        <li>· 和值分布与跨度</li>
+        <li>· 奇偶 / 大小模式</li>
+        <li>· 重复号与邻号统计</li>
+        <li>· 冷热号频率参考</li>
+    </ul>
+    <p style="margin-top:0.2rem; font-size:0.9rem; color:#546e7a;">以上均为公开资料中常见的分析维度，供研究时参考。</p>
+
+    <div class="divider-light"></div>
+    <p style="font-size:0.92rem; margin-top:0.2rem;">如需直接访问 <a href="https://zhcw-pl5.com">排列五</a> 相关页面，可点击该链接。本页不构成任何形式的投资或行为建议。</p>
+
+    <!-- footer -->
+    <div class="footer-note">
+        资料索引 · 排列五 · 信息组织方向<br>
+        内容基于公开资料整理，仅供参考，不保证绝对完整或实时。请以官方发布为准。
+    </div>
+
+</div>
+</body>
+</html>
